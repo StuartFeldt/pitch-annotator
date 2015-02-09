@@ -1,0 +1,30 @@
+/* application css */
+
+body { border-top:6px solid #c00; }
+.btn-pitch-type { width: 90%; margin-top:6px;}
+
+#game-info {
+	margin-top:15px;
+	text-align:center;
+}
+
+.btn-pitch-outcome {
+	width:45%;
+	margin-top:6px;
+}
+
+#count {
+	font-size:1.3em; 
+	font-weight:bold;
+}
+
+#record-pitch {
+	width:90%;
+	margin-left:0;
+	margin-bottom:6px;
+}
+
+.title {
+	font-size:.75em;
+	font-color:#999;
+}
