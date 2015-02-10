@@ -5,7 +5,7 @@
 				<div class="row">
 					<h3 class="title">Situation</h3>
 					<div id="situation-balls">
-					<h3><small>Balls</small></h2>
+					<h6>Balls</h6>
 						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default btn-success" ng-click="addFilter('balls', -1)">Any</button>
 						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 0)">0</button>
 						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 1)">1</button>
@@ -13,18 +13,24 @@
 						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 3)">3</button>
 					</div>
 					<div id="situation-strikes">
-						<h3><small>Strikes</small></h3>
+						<h6>Strikes</h6>
 						<button type="button" class="btn btn-default btn-success btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', -1)">Any</button>
 						<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 0)">0</button>
 						<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 1)">1</button>
 						<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 2)">2</button>
 					</div>
 					<div id="situation-outs">
-					<h3><small>Outs</small></h3>
+					<h6>Outs</h6>
 						<button type="button" class="btn btn-default btn-success btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', -1)">Any</button>
 						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 0)">0</button>
 						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 1)">1</button>
 						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 2)">2</button>
+					</div>
+					<div id="situation-batter">
+					<h6>Batter</h6>
+						<button type="button" class="btn btn-default btn-success btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', -1)">Any</button>
+						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', 0)">L</button>
+						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', 1)">R</button>
 					</div>
 				</div>
 			</div>
@@ -52,7 +58,7 @@
 		</div>
 		<hr>
 		<div class="row">
-			<a class="btn btn-default" href="#/record">New Game</a>
+			<a class="btn btn-default" href="/app/#/random">Generate Random Data</a>
 			<h3>Game Log</h3>
 			Filter: <input ng-model="query">
 			<div id="gameLog">
@@ -80,5 +86,3 @@
 		</div>
 	</div>
 </div>
-
-<pre>{{pitchEventStack}}</pre>
