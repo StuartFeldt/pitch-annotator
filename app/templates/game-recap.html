@@ -1,87 +1,119 @@
 <div class="container-fluid">
 	<div class="col-xs-12">
 		<div class="row">
-			<div class="col-xs-4">
-				<div class="row">
-					<h3 class="title">Situation</h3>
-					<div id="situation-balls">
-					<h6>Balls</h6>
-						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default btn-success" ng-click="addFilter('balls', -1)">Any</button>
-						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 0)">0</button>
-						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 1)">1</button>
-						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 2)">2</button>
-						<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 3)">3</button>
-					</div>
-					<div id="situation-strikes">
-						<h6>Strikes</h6>
-						<button type="button" class="btn btn-default btn-success btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', -1)">Any</button>
-						<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 0)">0</button>
-						<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 1)">1</button>
-						<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 2)">2</button>
-					</div>
-					<div id="situation-outs">
-					<h6>Outs</h6>
-						<button type="button" class="btn btn-default btn-success btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', -1)">Any</button>
-						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 0)">0</button>
-						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 1)">1</button>
-						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 2)">2</button>
-					</div>
-					<div id="situation-batter">
-					<h6>Batter</h6>
-						<button type="button" class="btn btn-default btn-success btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', -1)">Any</button>
-						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', 0)">L</button>
-						<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', 1)">R</button>
-					</div>
+			<div class="alert alert-success">
+				Select the situation below to view pitcher statistics for selection.
+			</div>
+			<div class="col-xs-5 col-xs-offset-1">
+				<div id="situation-balls">
+				<h6>Balls</h6>
+					<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default btn-success" ng-click="addFilter('balls', -1)">Any</button>
+					<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 0)">0</button>
+					<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 1)">1</button>
+					<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 2)">2</button>
+					<button type="button" class="btn btn-default btn-situation-balls btn-pitch-default" ng-click="addFilter('balls', 3)">3</button>
+				</div>
+				<div id="situation-strikes">
+					<h6>Strikes</h6>
+					<button type="button" class="btn btn-default btn-success btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', -1)">Any</button>
+					<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 0)">0</button>
+					<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 1)">1</button>
+					<button type="button" class="btn btn-default btn-situation-strikes btn-pitch-default" ng-click="addFilter('strikes', 2)">2</button>
 				</div>
 			</div>
-			<div class="col-xs-8">
-				<div class="row">
-					<div class="col-xs-4 col-xs-offset-1" id="situation-results">
-						<div class="row">
-							<h3 class="title">Placement</h3>
-								<div class="row">
-									<button disabled ng-repeat="placement in placements" class="btn btn-zone col-xs-4">{{ Math.round(placement.frequency.total / totalPitches * 100)}}%</button>
-								</div>
-						</div>
-					</div>
-					<div class="col-xs-6 col-xs-offset-1">
-						<div class="row">
-							<h3 class="title">Pitch %</h3>
-							<div ng-repeat="pitch in pitchTypes">{{pitch.name}} - {{ Math.round(pitch.frequency.total / totalPitches * 100) }}%</div>
-						</div>
-					</div>
+			<div class="col-xs-6">
+				<div id="situation-outs">
+				<h6>Outs</h6>
+					<button type="button" class="btn btn-default btn-success btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', -1)">Any</button>
+					<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 0)">0</button>
+					<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 1)">1</button>
+					<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('outs', 2)">2</button>
 				</div>
-				<div class="row">
-					<h3 class="title">Velocity Chart</h3>
+				<div id="situation-batter">
+				<h6>Batter</h6>
+					<button type="button" class="btn btn-default btn-success btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', -1)">Any</button>
+					<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', 0)">L</button>
+					<button type="button" class="btn btn-default btn-situation-outs btn-pitch-default" ng-click="addFilter('batter', 1)">R</button>
 				</div>
 			</div>
 		</div>
 		<hr>
 		<div class="row">
-			<a class="btn btn-default" href="/app/#/random">Generate Random Data</a>
-			<h3>Game Log</h3>
-			Filter: <input ng-model="query">
-			<div id="gameLog">
-			<div ng-repeat="pitchEvent in pitchEventStack | filter:query">
-				<hr>
+			<div class="col-xs-3 col-xs-offset-2" id="situation-results">
 				<div class="row">
-					<div class="col-xs-4">
-						<div>Inning: {{pitchEvent.inning}}</div>
-						<div>Count: {{pitchEvent.count.balls}}-{{pitchEvent.count.strikes}}, {{pitchEvent.outs}} out</div>
-						<div>Pitch Count: {{pitchEvent.pitchCount}}</div>
-					</div>
-					<div class="col-xs-4">
-						<div>Batter #: {{pitchEvent.batter.order}}</div>
-						<div>Batter Hand: {{pitchEvent.batter.handedness}}</div>
-						<div>Pitch Outcome: {{pitchEvent.pitch.outcome}}</div>
-					</div>
-					<div class="col-xs-4">
-						<div>Pitch Type: {{pitchTypes[pitchEvent.pitch.type].name}}</div>
-						<div>Pitch Speed: {{pitchEvent.pitch.speed}}</div>
-						<div>Placement: {{placements[pitchEvent.pitch.placement].name}}</div>
-					</div>
+					<h3 class="title">Placement</h3>
+					<button disabled ng-repeat="placement in placements" ng-style="{'background': placement.zoneStyle}" class="btn btn-zone col-xs-4">{{ (placement.frequency.total / totalPitches * 100).toFixed(2) }}%</button>
 				</div>
 			</div>
+
+			<div class="col-xs-3 col-xs-offset-2">
+				<div class="row">
+					<h3 class="title">Chart</h3>
+					<div id="chart"></div>
+				</div>
+			</div>
+			
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+				<div class="row">
+					<h3 class="title">Breakdown</h3>
+					<table id="recap-pitch-totals">
+						<tr>
+							<th>Pitch</th>
+							<th>Total</th>
+							<th>Frequency</th>
+							<th>Avg Speed</th>
+							<th>Top Speed</th>
+						</tr>
+						<tr ng-repeat="pitch in pitchTypes">
+							<td class="col-xs-3">{{pitch.name}}</td>
+							<td class="col-xs-1">{{pitch.frequency.total}}</td>
+							<td class="col-xs-2">{{ (pitch.frequency.total / totalPitches * 100).toFixed(2) }}%</td>
+							<td class="col-xs-3">{{ (pitch.avgSpeed).toFixed(2) }} mph</td>
+							<td class="col-xs-3">{{pitch.topSpeed}} mph</td>
+						</tr>
+						<tr>
+							<td class="col-xs-3">Total</td>
+							<td class="col-xs-1">{{totalPitches}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#game-log" aria-expanded="false" aria-controls="collapseExample">
+			  Show Game Log
+			</button>
+			<div class="collapse" id="game-log">
+				<h3>Game Log</h3>
+				Filter: <input ng-model="query">
+				<a class="btn btn-default" href="/app/#/random">Generate Random Data</a>
+				<div id="gameLog">
+					<div ng-repeat="pitchEvent in pitchEventStack | filter:query">
+						<hr>
+						<div class="row">
+							<div class="col-xs-3">
+								<div>Count: {{pitchEvent.count.balls}}-{{pitchEvent.count.strikes}}, {{pitchEvent.outs}} out</div>
+								<div>Pitch Count: {{pitchEvent.pitchCount}}</div>
+							</div>
+							<div class="col-xs-3">
+								<div>Batter #: {{pitchEvent.batter.order}}</div>
+								<div>Batter Hand: {{pitchEvent.batter.handedness}}</div>
+							</div>
+							<div class="col-xs-3">
+								<div>Pitch Speed: {{pitchEvent.pitch.speed}}</div>
+								<div>Pitch Outcome: {{pitchEvent.pitch.outcome}}</div>
+							</div>
+							<div class="col-xs-3">
+								<div>Pitch Type: {{pitchTypes[pitchEvent.pitch.type].name}}</div>
+								<div>Placement: {{placements[pitchEvent.pitch.placement].name}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

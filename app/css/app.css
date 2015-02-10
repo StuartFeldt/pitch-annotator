@@ -1,44 +1,44 @@
 /* application css */
 
-body { border-top:6px solid #c00; }
+body { border-top:6px solid #c00; padding-top:12px;}
 hr {margin:10px auto;}
 .btn-pitch-type { width: 90%; margin-top:6px;}
-
 #game-info {
 	margin-top:15px;
 	text-align:center;
 }
-
 .btn-pitch-outcome {
 	width:45%;
 	margin-top:6px;
 }
-
+.btn-pitch-default {
+	font-size: 1.5em;
+	color:#666;
+}
 #count {
 	font-size:1.3em; 
 	font-weight:bold;
 }
-
-#record-pitch {
+#record-pitch, #complete-game {
 	width:90%;
 	margin-left:0;
 	margin-bottom:6px;
 }
-
 .title {
 	font-size:.75em;
 	font-color:#999;
 }
-
-.batter-handedness {text-align:center;}
-
 .btn-zone {
 	font-size:.75em;
-	padding:15px 0;
+	padding:25px 0;
 	border-radius:0;
 	border:1px solid #aaa;
+	opacity: 1 !important;
 }
-
+.btn-zone.disabled {
+	color:black;
+}
+.batter-handedness {text-align:center;}
 .summary-pitch-name {width:100px;}
 .summary-pitch-count {width:25px;}
 .summary-pitch-speed {width:50px;}

@@ -5,7 +5,8 @@
       "total": 0,
       "count": []
     },
-    "avgSpeed": 0
+    "avgSpeed": 0,
+    "topSpeed": 0
   },
   {
     "name": "Cutter",
@@ -13,7 +14,8 @@
       "total": 0,
       "count": []
     },
-    "avgSpeed": 0
+    "avgSpeed": 0,
+    "topSpeed": 0
   },
   {
     "name": "Curve",
@@ -21,7 +23,8 @@
       "total": 0,
       "count": []
     },
-    "avgSpeed": 0
+    "avgSpeed": 0,
+    "topSpeed": 0
   },
   {
     "name": "Change",
@@ -29,7 +32,8 @@
       "total": 0,
       "count": []
     },
-    "avgSpeed": 0
+    "avgSpeed": 0,
+    "topSpeed": 0
   },
   {
     "name": "Slider",
@@ -37,6 +41,7 @@
       "total": 0,
       "count": []
     },
-    "avgSpeed": 0
+    "avgSpeed": 0,
+    "topSpeed": 0
   }
 ]
