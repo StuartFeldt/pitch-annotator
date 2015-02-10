@@ -10,11 +10,11 @@ pitchApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'templates/game-record.html',
         controller: 'GameRecordController'
       }).
-      when('/recap/:game', {
+      when('/recap', {
         templateUrl: 'templates/game-recap.html',
         controller: 'GameRecapController'
       }).
       otherwise({
-        redirectTo: '/game'
+        redirectTo: '/record'
       });
   }]);

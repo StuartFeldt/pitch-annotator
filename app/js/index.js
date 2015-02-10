@@ -1,14 +1,9 @@
-$(document).on("click", ".btn-pitch-outcome", function(){
-	$(this).parent().children().removeClass('active');
-    $(this).addClass('active');
-});
-
-$(document).on("click", ".btn-pitch-type", function(){
-	$(this).parent().children().removeClass('active');
-    $(this).addClass('active');
+$(document).on("click", ".btn-pitch-default", function(){
+	$(this).parent().children().removeClass('btn-success');
+    $(this).addClass('btn-success');
 });
 
 $(document).on("click", ".btn-zone", function(){
-	$(this).parent().children().removeClass('active');
-    $(this).addClass('active');
+	$(this).parent().parent().children().children().removeClass('btn-success');
+    $(this).addClass('btn-success');
 });

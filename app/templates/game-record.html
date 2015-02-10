@@ -3,84 +3,82 @@
 		<div class="col-xs-10 col-xs-offset-1">
 			<div id="game-info" class="row">
 				<div id="game-score" class="col-xs-3">
-					<p>Home: {{score.home}}</p>
-					<p>Away: {{score.away}}</p>
+					<p>Runs: {{score.away}}</p>
 				</div>
 				<div id="counts" class="col-xs-6">
 					<p id="count">Count: {{count.balls}} - {{count.strikes}}</p>
 					<p>Pitch Count: {{pitchCount}}</p>
 				</div>
 				<div id="game-status" class="col-xs-3">
-					<p>{{ inning % 2 == 0 ? "Bottom" : "Top" }} {{ inning % 2 == 0 ? inning / 2 : inning / 2 + .5 }}</p>
+					<p>Bottom {{ inning }}</p>
 					<p>{{outs}} out</p>
 				</div>
 			</div>
 			<hr>
 			<div id="game-controls">
 				<div class="col-xs-6">
-					<button class="btn btn-success" id="record-pitch" ng-click="commitPitchEvent()">Apply Pitch</button>
+					<button class="btn btn-danger" id="record-pitch" ng-click="commitPitchEvent()">Apply Pitch</button>
 					<div class="row">
 						<div class="title">Pitch Type</div>
 						<div>
-						  <button type="button" class="btn btn-default btn-pitch-type" ng-click="addPitchType(1)">Pitch 1</button>
-						  <button type="button" class="btn btn-default btn-pitch-type" ng-click="addPitchType(2)">Pitch 2</button>
-						  <button type="button" class="btn btn-default btn-pitch-type" ng-click="addPitchType(3)">Pitch 3</button>
-						  <button type="button" class="btn btn-default btn-pitch-type" ng-click="addPitchType(4)">Pitch 4</button>
-						  <button type="button" class="btn btn-default btn-pitch-type" ng-click="addPitchType(5)">Pitch 5</button>
+						  <button type="button" class="btn btn-default btn-pitch-type btn-pitch-default" ng-repeat="pitch in pitchTypes" ng-click="addPitchType($index)">{{pitch.name}}</button>
 						</div>
 					</div>
 					<hr>
-
 					<div class="row">
 						<div class="title">Pitch Outcome</div>
 						<div>
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome('b', false)">Ball</button>
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome('s', false)">Strike</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome('b', false)">Ball</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome('s', false)">Strike</button>
 						  <br />
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome('fb', false)">Foul</button>
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome(5, true)">Out (In Play)</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome('fb', false)">Foul</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome(5, true)">Out (In Play)</button>
 						  <br />
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome(1, true)">1B</button>
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome(2, true)">2B</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome(1, true)">1B</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome(2, true)">2B</button>
 						  <br />
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome(3, true)">3B</button>
-						  <button type="button" class="btn btn-default btn-pitch-outcome" ng-click="addPitchOutcome(4, true)">HR</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome(3, true)">3B</button>
+						  <button type="button" class="btn btn-default btn-pitch-outcome btn-pitch-default" ng-click="addPitchOutcome(4, true)">HR</button>
 						</div>
 					</div>
-					
-					
 				</div>
 				<div class="col-xs-6">
 					<div class="row">
-						<button class="btn btn-info btn-batter" ng-click="addBatterHandedness('l')">L</button>
-						<span>Batter Handedness</span>
-						<button class="btn btn-info btn-batter" ng-click="addBatterHandedness('r')">R</button>
+						<div id="batter-handedness">
+							<span class="title">Batter Handedness:</span>
+							<button class="btn btn-default btn-batter btn-pitch-default" ng-click="addBatterHandedness('l')">L</button>
+							<button class="btn btn-default btn-batter btn-pitch-default" ng-click="addBatterHandedness('r')">R</button>
+						</div>
 					</div>
+					<hr>
+					<div class="row">
+						<div class="title">Pitch Speed</div>
+						<input type="range" min=50 max=105 value=80 step=1 ng-model="pitchSpeed"/>
+						<p>{{pitchSpeed}} mph</p>
+					</div>
+					<hr>
 					<div class="row" id="pitch-zone">
+						<div class="title">Pitch Placement</div>
 						<div class="row">
-							<button class="btn btn-zone col-xs-2 col-xs-offset-3">UA</button>
-							<button class="btn btn-zone col-xs-2">U</button>
-							<button class="btn btn-zone col-xs-2">UI</button>
-						</div>
-						<div class="row">
-							<button class="btn btn-zone col-xs-2 col-xs-offset-3">A</button>
-							<button class="btn btn-zone col-xs-2">C</button>
-							<button class="btn btn-zone col-xs-2">I</button>
-						</div>
-						<div class="row">
-							<button class="btn btn-zone col-xs-2 col-xs-offset-3">LA</button>
-							<button class="btn btn-zone col-xs-2">L</button>
-							<button class="btn btn-zone col-xs-2">LI</button>
+							<div class="col-xs-10 col-xs-offset-1">
+								<button class="btn btn-zone col-xs-4" ng-repeat="placement in placements" ng-click="addPitchPlacement($index)">{{placement.name}}</button>
+							</div>
 						</div>
 					</div>
+					<hr>
+					<h3>Quick Summary</h3>
+					<table>
+						<tr ng-repeat="pitch in pitchTypes">
+							<td class="summary-pitch-name">{{pitch.name}}</td>
+							<td class="summary-pitch-count">{{pitch.frequency.total}}</td>
+							<td class="summary-pitch-speed">{{pitch.avgSpeed}} mph</td>
+							<td class="summary-pitch-loc">{{pitch.locations}}</td>
+						</tr>
+						<tr><td>Total:</td><td>{{pitchCount}}</td><td>{{avgSpeed}} mph</td></tr>
+					</table>
 				</div>
-			</div>
-			<p>
-				<h3>Last Event:</h3>
-				<pre>{{lastevent}}</pre>
-			</p>
-			<p><button class="btn btn-info" href="#/recap">Complete Game</button></p>
-			<p><button class="btn btn-info" ng-click="undo()">Undo</button></p>
+			</div>	
+			<p><a href="#/recap">Complete Game</a></p>
 		</div>
 	</div>
 </div>

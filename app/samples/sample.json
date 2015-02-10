@@ -1,0 +1,498 @@
+[
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 0,
+    "pitchCount": 0,
+    "score": {
+      "home": 0,
+      "away": 0
+    }
+  },
+  {
+    "count": {
+      "strikes": 1,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 0,
+    "pitchCount": 1,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 2,
+      "speed": "76",
+      "placement": 7,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 2,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 0,
+    "pitchCount": 2,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 0,
+      "speed": "92",
+      "placement": 5,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 2,
+      "balls": 1
+    },
+    "inning": 1,
+    "outs": 0,
+    "pitchCount": 3,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 2,
+      "speed": "92",
+      "placement": 8,
+      "outcome": "b"
+    }
+  },
+  {
+    "count": {
+      "strikes": 2,
+      "balls": 2
+    },
+    "inning": 1,
+    "outs": 0,
+    "pitchCount": 4,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 4,
+      "speed": "92",
+      "placement": 6,
+      "outcome": "b"
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 1,
+    "pitchCount": 5,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 0,
+      "speed": "95",
+      "placement": 2,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 1
+    },
+    "inning": 1,
+    "outs": 1,
+    "pitchCount": 6,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "r",
+      "order": 0
+    },
+    "pitch": {
+      "type": 1,
+      "speed": "87",
+      "placement": 3,
+      "outcome": "b"
+    }
+  },
+  {
+    "count": {
+      "strikes": 1,
+      "balls": 1
+    },
+    "inning": 1,
+    "outs": 1,
+    "pitchCount": 7,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "r",
+      "order": 0
+    },
+    "pitch": {
+      "type": 2,
+      "speed": "78",
+      "placement": 7,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 1,
+    "pitchCount": 8,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "r",
+      "order": 0
+    },
+    "pitch": {
+      "type": 1,
+      "speed": "82",
+      "placement": 3,
+      "outcome": 2
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 1,
+    "pitchCount": 9,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "r",
+      "order": 0
+    },
+    "pitch": {
+      "type": 1,
+      "speed": "82",
+      "placement": 5,
+      "outcome": 2
+    }
+  },
+  {
+    "count": {
+      "strikes": 1,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 1,
+    "pitchCount": 10,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 0,
+      "speed": "86",
+      "placement": 5,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 2,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 1,
+    "pitchCount": 11,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 2,
+      "speed": "78",
+      "placement": 8,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 2,
+    "pitchCount": 12,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 1,
+      "speed": "74",
+      "placement": 0,
+      "outcome": "fb"
+    }
+  },
+  {
+    "count": {
+      "strikes": 1,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 2,
+    "pitchCount": 13,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 3,
+      "speed": "74",
+      "placement": 3,
+      "outcome": "fb"
+    }
+  },
+  {
+    "count": {
+      "strikes": 2,
+      "balls": 0
+    },
+    "inning": 1,
+    "outs": 2,
+    "pitchCount": 14,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 2,
+      "speed": "80",
+      "placement": 6,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 2,
+    "outs": 0,
+    "pitchCount": 15,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 0,
+      "speed": "80",
+      "placement": 2,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 1,
+      "balls": 0
+    },
+    "inning": 2,
+    "outs": 0,
+    "pitchCount": 16,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 1,
+      "speed": "80",
+      "placement": 8,
+      "outcome": "fb"
+    }
+  },
+  {
+    "count": {
+      "strikes": 2,
+      "balls": 0
+    },
+    "inning": 2,
+    "outs": 0,
+    "pitchCount": 17,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 1,
+      "speed": "87",
+      "placement": 8,
+      "outcome": "fb"
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 2,
+    "outs": 1,
+    "pitchCount": 18,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 3,
+      "speed": "87",
+      "placement": 4,
+      "outcome": "fb"
+    }
+  },
+  {
+    "count": {
+      "strikes": 1,
+      "balls": 0
+    },
+    "inning": 2,
+    "outs": 1,
+    "pitchCount": 19,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 0,
+      "speed": "87",
+      "placement": 4,
+      "outcome": "s"
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 0
+    },
+    "inning": 2,
+    "outs": 1,
+    "pitchCount": 20,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 1,
+      "speed": "74",
+      "placement": 4,
+      "outcome": 1
+    }
+  },
+  {
+    "count": {
+      "strikes": 0,
+      "balls": 1
+    },
+    "inning": 2,
+    "outs": 1,
+    "pitchCount": 21,
+    "score": {
+      "home": 0,
+      "away": 0
+    },
+    "batter": {
+      "handedness": "l",
+      "order": 0
+    },
+    "pitch": {
+      "type": 0,
+      "speed": "84",
+      "placement": 3,
+      "outcome": "b"
+    }
+  }
+]

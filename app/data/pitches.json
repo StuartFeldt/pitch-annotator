@@ -1,0 +1,42 @@
+[
+  {
+    "name": "4sm Fastball",
+    "frequency": {
+      "total": 0,
+      "count": []
+    },
+    "avgSpeed": 0
+  },
+  {
+    "name": "Cutter",
+    "frequency": {
+      "total": 0,
+      "count": []
+    },
+    "avgSpeed": 0
+  },
+  {
+    "name": "Curve",
+    "frequency": {
+      "total": 0,
+      "count": []
+    },
+    "avgSpeed": 0
+  },
+  {
+    "name": "Change",
+    "frequency": {
+      "total": 0,
+      "count": []
+    },
+    "avgSpeed": 0
+  },
+  {
+    "name": "Slider",
+    "frequency": {
+      "total": 0,
+      "count": []
+    },
+    "avgSpeed": 0
+  }
+]

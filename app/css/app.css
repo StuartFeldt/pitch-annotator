@@ -1,6 +1,7 @@
 /* application css */
 
 body { border-top:6px solid #c00; }
+hr {margin:10px auto;}
 .btn-pitch-type { width: 90%; margin-top:6px;}
 
 #game-info {
@@ -28,3 +29,16 @@ body { border-top:6px solid #c00; }
 	font-size:.75em;
 	font-color:#999;
 }
+
+.batter-handedness {text-align:center;}
+
+.btn-zone {
+	font-size:.75em;
+	padding:15px 0;
+	border-radius:0;
+	border:1px solid #aaa;
+}
+
+.summary-pitch-name {width:100px;}
+.summary-pitch-count {width:25px;}
+.summary-pitch-speed {width:50px;}

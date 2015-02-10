@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Up Away",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "Up",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "Up In",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "Away",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "Middle",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "In",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "Low Away",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "Low",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  },
+  {
+    "name": "Low In",
+    "frequency": {
+      "total": 0,
+      "pitch": [],
+      "count": []
+    }
+  }
+]
