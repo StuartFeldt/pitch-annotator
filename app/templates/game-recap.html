@@ -1,9 +1,9 @@
 <div class="container-fluid">
 	<div class="col-xs-12">
 		<div class="row">
-			<div class="alert alert-success">
+			<!--<div class="alert alert-success">
 				Select the situation below to view pitcher statistics for selection.
-			</div>
+			</div>-->
 			<div class="col-xs-5 col-xs-offset-1">
 				<div id="situation-balls">
 				<h6>Balls</h6>
@@ -39,44 +39,78 @@
 		</div>
 		<hr>
 		<div class="row">
-			<div class="col-xs-3 col-xs-offset-2" id="situation-results">
+			<div class="col-xs-3 col-xs-offset-1" id="situation-results">
 				<div class="row">
 					<h3 class="title">Placement</h3>
 					<button disabled ng-repeat="placement in placements" ng-style="{'background': placement.zoneStyle}" class="btn btn-zone col-xs-4">{{ (placement.frequency.total / totalPitches * 100).toFixed(2) }}%</button>
 				</div>
 			</div>
 
-			<div class="col-xs-3 col-xs-offset-2">
-				<div class="row">
-					<h3 class="title">Chart</h3>
-					<div id="chart"></div>
-				</div>
-			</div>
-			
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-xs-8 col-xs-offset-2">
+			<div class="col-xs-7 col-xs-offset-1">
 				<div class="row">
 					<h3 class="title">Breakdown</h3>
-					<table id="recap-pitch-totals">
+					<table id="recap-pitch-totals" class="table">
 						<tr>
 							<th>Pitch</th>
 							<th>Total</th>
-							<th>Frequency</th>
+							<th>Freq.</th>
 							<th>Avg Speed</th>
 							<th>Top Speed</th>
 						</tr>
 						<tr ng-repeat="pitch in pitchTypes">
-							<td class="col-xs-3">{{pitch.name}}</td>
-							<td class="col-xs-1">{{pitch.frequency.total}}</td>
+							<td class="col-xs-2">{{pitch.name}}</td>
+							<td class="col-xs-2">{{pitch.frequency.total}}</td>
 							<td class="col-xs-2">{{ (pitch.frequency.total / totalPitches * 100).toFixed(2) }}%</td>
 							<td class="col-xs-3">{{ (pitch.avgSpeed).toFixed(2) }} mph</td>
 							<td class="col-xs-3">{{pitch.topSpeed}} mph</td>
 						</tr>
 						<tr>
+							<td class="col-xs-2">Total</td>
+							<td class="col-xs-2">{{totalPitches}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-1">
+				<div class="row">
+					<h3 class="title">Outcomes by pitch</h3>
+					<table id="recap-pitch-totals" class="table">
+						<tr>
+							<th>Pitch</th>
+							<th>Strike</th>
+							<th>Ball</th>
+							<th>Foul</th>
+							<th>1B</th>
+							<th>2B</th>
+							<th>3B</th>
+							<th>HR</th>
+							<th>Out (in play)</th>
+						</tr>
+						<tr ng-repeat="pitch in pitchTypes">
+							<td class="col-xs-3">{{pitch.name}}</td>
+							<td class="col-xs-1">{{pitch.outcome['s']}}</td>
+							<td class="col-xs-1">{{pitch.outcome['b']}}</td>
+							<td class="col-xs-1">{{pitch.outcome['fb']}}</td>
+							<td class="col-xs-1">{{pitch.outcome[1]}}</td>
+							<td class="col-xs-1">{{pitch.outcome[2]}}</td>
+							<td class="col-xs-1">{{pitch.outcome[3]}}</td>
+							<td class="col-xs-1">{{pitch.outcome[4]}}</td>
+							<td class="col-xs-2">{{pitch.outcome[5]}}</td>
+						</tr>
+						<tr>
 							<td class="col-xs-3">Total</td>
-							<td class="col-xs-1">{{totalPitches}}</td>
+							<td class="col-xs-1">{{outcome['s']}}</td>
+							<td class="col-xs-1">{{outcome['b']}}</td>
+							<td class="col-xs-1">{{outcome['fb']}}</td>
+							<td class="col-xs-1">{{outcome[1]}}</td>
+							<td class="col-xs-1">{{outcome[2]}}</td>
+							<td class="col-xs-1">{{outcome[3]}}</td>
+							<td class="col-xs-1">{{outcome[4]}}</td>
+							<td class="col-xs-2">{{outcome[5]}}</td>
 						</tr>
 					</table>
 				</div>
@@ -87,10 +121,11 @@
 			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#game-log" aria-expanded="false" aria-controls="collapseExample">
 			  Show Game Log
 			</button>
+			<a class="btn btn-info" href="/app/#/random">Generate New Test Data</a>
+			<a class="btn btn-info" href="/app/#/record">New Game</a>
 			<div class="collapse" id="game-log">
 				<h3>Game Log</h3>
 				Filter: <input ng-model="query">
-				<a class="btn btn-default" href="/app/#/random">Generate Random Data</a>
 				<div id="gameLog">
 					<div ng-repeat="pitchEvent in pitchEventStack | filter:query">
 						<hr>

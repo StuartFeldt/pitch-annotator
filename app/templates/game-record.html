@@ -111,12 +111,18 @@
 		</div>
 		<div class="col-xs-5">
 			<h4>Quick Summary</h4>
-			<table>
+			<table class="table">
+				<tr>
+					<th>Pitch</th>
+					<th>Count</th>
+					<th></th>
+				</tr>
 				<tr ng-repeat="pitch in pitchTypes">
 					<td class="summary-pitch-name">{{pitch.name}}</td>
 					<td class="summary-pitch-count">{{pitch.frequency.total}}</td>
+					<td></td>
 				</tr>
-				<tr><td>Total:</td><td>{{pitchCount}}</td><td>{{avgSpeed}} mph</td></tr>
+				<tr><td>Total:</td><td>{{pitchCount}}</td><td>Avg: {{avgSpeed}} mph</td></tr>
 			</table>
 		</div>
 	</div>

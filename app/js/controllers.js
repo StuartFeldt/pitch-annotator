@@ -216,6 +216,7 @@ pitchControllers.controller('GameRecapController', ['$scope', '$http', function(
     $scope.pitchEventStack = pitchEventStack;
     $scope.Math = window.Math;
     $scope.totalPitches = $scope.pitchEventStack[$scope.pitchEventStack.length - 1].pitchCount;
+    $scope.outcome = [];
 
     // Set results filter to -1 for all properties (any)
     $scope.resultsFilter = {
@@ -238,6 +239,10 @@ pitchControllers.controller('GameRecapController', ['$scope', '$http', function(
                 $scope.placements[v.pitch.placement].frequency.total++;
                 $scope.pitchTypes[v.pitch.type].frequency.total++;
                 $scope.pitchTypes[v.pitch.type].avgSpeed += parseInt(v.pitch.speed);
+
+                // goofy ternarys for if key does not exist
+                $scope.pitchTypes[v.pitch.type].outcome[v.pitch.outcome] = $scope.pitchTypes[v.pitch.type].outcome[v.pitch.outcome] == undefined ? 1 : $scope.pitchTypes[v.pitch.type].outcome[v.pitch.outcome] += 1;
+                $scope.outcome[v.pitch.outcome] = $scope.outcome[v.pitch.outcome] == undefined ? 1 : $scope.outcome[v.pitch.outcome] += 1;
                 $scope.pitchTypes[v.pitch.type].topSpeed = v.pitch.speed > $scope.pitchTypes[v.pitch.type].topSpeed ? v.pitch.speed : $scope.pitchTypes[v.pitch.type].topSpeed;
             });
 
@@ -281,13 +286,17 @@ pitchControllers.controller('GameRecapController', ['$scope', '$http', function(
         // to result in true
         $.each($scope.pitchEventStack, function(k, v) {
             if (
-                v.count.balls == (balls == -1 ? parseInt(v.count.balls, 10) : balls) &&
-                v.count.strikes == (strikes == -1 ? parseInt(v.count.strikes, 10) : strikes) &&
-                v.batter.handedness == (batter == -1 ? parseInt(v.batter.handedness, 10) : batter) &&
-                v.outs == (outs == -1 ? parseInt(v.outs, 10) : outs)) {
+                v.count.balls == (balls == -1 ? v.count.balls : balls) &&
+                v.count.strikes == (strikes == -1 ? v.count.strikes : strikes) &&
+                v.batter.handedness == (batter == -1 ? v.batter.handedness : batter) &&
+                v.outs == (outs == -1 ? v.outs : outs)) {
                 $scope.placements[v.pitch.placement].frequency.total++;
                 $scope.pitchTypes[v.pitch.type].frequency.total++;
                 $scope.pitchTypes[v.pitch.type].avgSpeed += parseInt(v.pitch.speed);
+
+                // goofy ternarys for if key does not exist
+                $scope.pitchTypes[v.pitch.type].outcome[v.pitch.outcome] = $scope.pitchTypes[v.pitch.type].outcome[v.pitch.outcome] == undefined ? 1 : $scope.pitchTypes[v.pitch.type].outcome[v.pitch.outcome] += 1;
+                $scope.outcome[v.pitch.outcome] = $scope.outcome[v.pitch.outcome] == undefined ? 1 : $scope.outcome[v.pitch.outcome] += 1;
                 $scope.pitchTypes[v.pitch.type].topSpeed = v.pitch.speed > $scope.pitchTypes[v.pitch.type].topSpeed ? v.pitch.speed : $scope.pitchTypes[v.pitch.type].topSpeed;
                 $scope.totalPitches++;
             }
@@ -308,8 +317,10 @@ pitchControllers.controller('GameRecapController', ['$scope', '$http', function(
         $.each($scope.pitchTypes, function(k, v) {
             v.frequency.total = 0;
             v.avgSpeed = 0;
-            v.topSpeed = 0
+            v.topSpeed = 0;
+            v.outcome = [];
         });
+        $scope.outcome = [];
         $scope.totalPitches = 0;
     }
 
@@ -317,17 +328,15 @@ pitchControllers.controller('GameRecapController', ['$scope', '$http', function(
     $scope.calculateZoneStyles = function() {
     	$.each($scope.placements, function(k, v){
     		var color = 255 - (v.frequency.total / $scope.totalPitches * 255).toFixed(0);
-    		console.log(color);
     		v.zoneStyle = "rgb("+color+", " + color+ ", " + color + ")"
     	});
-    	console.log($scope.placements);
     }
 
 }]);
 
 // helper controller - randomize data for testing purposes
 pitchControllers.controller('RandomController', ['$scope', function($scope) {
-    for (i = 0; i < 150; i++) {
+    for (i = 0; i < 121; i++) {
         var outcome = random(1, 8);
 
         switch (outcome) {
@@ -362,7 +371,7 @@ pitchControllers.controller('RandomController', ['$scope', function($scope) {
                 type: random(0, 4),
                 speed: random(50, 105),
                 placement: random(0, 8),
-                outcome: random(0, 2)
+                outcome: outcome
             }
         });
     }

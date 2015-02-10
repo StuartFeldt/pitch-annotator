@@ -1,12 +1,13 @@
 [
   {
-    "name": "4sm Fastball",
+    "name": "4sm FB",
     "frequency": {
       "total": 0,
       "count": []
     },
     "avgSpeed": 0,
-    "topSpeed": 0
+    "topSpeed": 0,
+    "outcome": []
   },
   {
     "name": "Cutter",
@@ -15,7 +16,8 @@
       "count": []
     },
     "avgSpeed": 0,
-    "topSpeed": 0
+    "topSpeed": 0,
+    "outcome": []
   },
   {
     "name": "Curve",
@@ -24,7 +26,8 @@
       "count": []
     },
     "avgSpeed": 0,
-    "topSpeed": 0
+    "topSpeed": 0,
+    "outcome": []
   },
   {
     "name": "Change",
@@ -33,7 +36,8 @@
       "count": []
     },
     "avgSpeed": 0,
-    "topSpeed": 0
+    "topSpeed": 0,
+    "outcome": []
   },
   {
     "name": "Slider",
@@ -42,6 +46,7 @@
       "count": []
     },
     "avgSpeed": 0,
-    "topSpeed": 0
+    "topSpeed": 0,
+    "outcome": []
   }
 ]
