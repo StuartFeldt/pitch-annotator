@@ -1,6 +1,6 @@
 /* application css */
 
-body { border-top:6px solid #c00; padding-top:12px;}
+body { border-top:6px solid #c00; padding-top:12px;background: #efefef;}
 hr {margin:10px auto;}
 .btn-pitch-type { width: 90%; margin-top:6px;}
 #game-info {
