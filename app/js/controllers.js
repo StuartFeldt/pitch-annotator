@@ -44,16 +44,31 @@ pitchControllers.controller('GameRecordController', ['$scope', '$http', function
             away: 0
         },
         batter: {
-            handedness: 'l',
+            handedness: 0,
             order: 0
         },
         pitch: {
             type: 0,
             speed: 0,
             placement: 0, // UA = 0, LI = 8
-            outcome: 0 //1 = 1b, 2 = 2b, 3 = 3b, 4 = hr, s = strike, b = ball, k = K, kl = >|, 5 = in-play out
+            outcome: 0 //1 = 1b, 2 = 2b, 3 = 3b, 4 = hr, s = strike, b = ball, 5 = in-play out
         },
     };
+
+    // re-initialize the event stack in case we are coming back from recap
+    pitchEventStack = [{
+        count: {
+            strikes: 0,
+            balls: 0
+        },
+        inning: 1,
+        outs: 0,
+        pitchCount: 0,
+        score: {
+            home: 0,
+            away: 0
+        }
+    }];
 
     // Set initial values
     $scope.count = pitchEvent.count;
