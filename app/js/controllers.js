@@ -71,12 +71,13 @@ pitchControllers.controller('GameRecordController', ['$scope', '$http', function
         $scope.lastEvent = "(" + $scope.pitchCount + ") ";
         $scope.lastEvent += $scope.count.balls + "-" + $scope.count.strikes + " " + $scope.pitchTypes[pitchEvent.pitch.type].name;
         $scope.lastEvent += " " + $scope.placements[pitchEvent.pitch.placement].name + " at " + $scope.pitchSpeed + " mph";
-        $scope.lastEvent += " (" + $scope.pitchCount + ")";
+        $scope.lastEvent += " with " + $scope.outs + " out";
         $scope.eventLog.push($scope.lastEvent);
 
         // bump pitch count
         pitchEvent.pitchCount++;
         $scope.pitchTypes[pitchEvent.pitch.type].frequency.total++;
+        pitchEvent.outs = $scope.outs;
 
         // update previous (non-referencing) object to the event stack
         pitchEventStack[currentPitchEvent] = {
@@ -113,6 +114,18 @@ pitchControllers.controller('GameRecordController', ['$scope', '$http', function
                 break;
             case 'b':
                 $scope.addBall();
+                break;
+            case 1:
+                $scope.resetCount();
+                break;
+            case 2:
+                $scope.resetCount();
+                break;
+            case 3:
+                $scope.resetCount();
+                break;
+            case 4:
+                $scope.resetCount();
                 break;
             case 5:
                 $scope.addOut();
@@ -182,24 +195,18 @@ pitchControllers.controller('GameRecordController', ['$scope', '$http', function
         $scope.pitchType = type;
         pitchEvent.pitch.type = type;
     }
-    $scope.addPitchOutcome = function(outcome, resetCount) {
+    $scope.addPitchOutcome = function(outcome) {
         pitchEvent.pitch.outcome = outcome;
-        if (resetCount) {
-            pitchEvent.count.strikes = 0;
-            pitchEvent.count.balls = 0;
-        }
+    }
+    $scope.resetCount = function() {
+        pitchEvent.count.strikes = 0;
+        pitchEvent.count.balls = 0;
     }
     $scope.addPitchPlacement = function(loc) {
         pitchEvent.pitch.placement = loc;
     }
     $scope.addBatterHandedness = function(hand) {
         pitchEvent.batter.handedness = hand;
-    }
-    $scope.bumpBatter = function() {
-        pitchEvent.batter.order++;
-        if (pitchEvent.batter.order == 9) {
-            pitchEvent.batter.order = 0;
-        }
     }
 }]);
 
@@ -326,10 +333,10 @@ pitchControllers.controller('GameRecapController', ['$scope', '$http', function(
 
     // generate styles for zones
     $scope.calculateZoneStyles = function() {
-    	$.each($scope.placements, function(k, v){
-    		var color = 255 - (v.frequency.total / $scope.totalPitches * 255).toFixed(0);
-    		v.zoneStyle = "rgb("+color+", " + color+ ", " + color + ")"
-    	});
+        $.each($scope.placements, function(k, v) {
+            var color = 255 - (v.frequency.total / $scope.totalPitches * 255).toFixed(0);
+            v.zoneStyle = "rgb(" + color + ", " + color + ", " + color + ")"
+        });
     }
 
 }]);
